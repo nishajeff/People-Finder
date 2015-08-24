@@ -63,7 +63,7 @@ String url2="";
 	        Statement s=conn.createStatement();
 	        message+="<div align=\"center\"><table style=\"border:2px solid black\">";
             message+="<th style=\" background-color:gray;border:2px solid black\">Title</th><th style=\" background-color:gray;border:2px solid black\">FirstName</th><th style=\" background-color:gray;border:2px solid black\">LastName</th><th style=\" background-color:gray;border:2px solid black\">Street</th><th style=\" background-color:gray;border:2px solid black\">Zip</th><th style=\" background-color:gray;border:2px solid black\">Email</th><th style=\" background-color:gray;border:2px solid black\">Position</th><th style=\" background-color:gray;border:2px solid black\">Company</th><th style=\" background-color:gray;border:2px solid black\">City</th><th style=\" background-color:gray;border:2px solid black\">State</th>";
-	        String query1="select c.fullname,c.title,c.fname,c.lname,c.street,c.zip,c.email,c.position,t.company_name,b.city_name,s.state_name from customer_bonus c , company_bonus t, cities b, states s where c.company_id=t.company_id and c.city_id=b.city_id and c.state_id= s.state_id and UPPER(c.lname)= UPPER('"+Name+"')";
+	        String query1="select c.fullname,c.title,c.fname,c.lname,c.street,c.zip,c.email,c.position,t.company_name,b.city_name,s.state_name from customer_bonus c , company_bonus t, cities b, states s where c.company_id=t.company_id and c.city_id=b.city_id and c.state_id= s.state_id and UPPER(c.lname)= UPPER('"+Name+"%')";
 	        //System.out.println(query1);
 	        res=s.executeQuery(query1);
 	        if(res.next()){
